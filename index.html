@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Images on Large Image</title>
+  <style>
+    /* 큰 이미지 컨테이너 */
+    .image-wrapper {
+      position: relative; /* 작은 이미지들의 기준이 되는 부모 요소 */
+      display: inline-block;
+    }
+
+    /* 큰 이미지 */
+    .image-wrapper img.large {
+      display: block;
+      /* max-width: 100%;  */
+      height: auto;
+    }
+
+    /* 작은 이미지 (공통 스타일) */
+    .small-img {
+      position: absolute; /* 큰 이미지 위에서 위치 고정 */
+      width: 800px;
+      height: auto;
+      border-radius: 50%; /* 원형 이미지 */
+    }
+
+    /* 작은 이미지 개별 위치 */
+    .img1 {
+      top: 100px;
+      left: 290px; 
+      opacity: 0.6;
+      animation: marquee 20s linear infinite; /* 애니메이션 적용 */
+    } 
+          /* 마퀴 애니메이션 정의 */
+      @keyframes marquee {
+        0% {
+          transform: translateX(100vw); /* 화면 오른쪽 밖에서 시작 */
+        }
+        100% {
+          transform: translateX(-100%); /* 이미지가 완전히 왼쪽으로 사라짐 */
+        }
+      }
+
+    .img2 {
+      top: 10px;
+      right: 10px;
+    }
+
+    .img3 {
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%); /* 수평 가운데 정렬 */
+    }
+
+    .img4 {
+      top: 100px;
+      left: 1080px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-wrapper">
+    <!-- 큰 이미지 -->
+    <img class="large" src="KakaoTalk_Photo_2025-04-01-04-16-43.png" alt="Large Image" width="2540" height="auto">
+
+    <!-- 작은 이미지들 -->
+     <a href="index2.html">
+      <img class="small-img img1" src="G.png" alt="Small Image 1">
+     </a>
+    <img class="small-img img2" src="giphy2.webp" alt="Small Image 2">
+    <img class="small-img img3" src="dog2.png" alt="Small Image 3">
+    <img class="small-img img4" src="dog.png" alt="Small Image 4">
+  </div>
+
+</body>
+</html>
